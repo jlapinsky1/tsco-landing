@@ -1,0 +1,30 @@
+---
+const btn = "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2";
+---
+
+<header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+    <a href="/" class="flex items-center gap-3">
+      <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950 text-white">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/>
+        </svg>
+      </div>
+      <div>
+        <p class="text-lg font-semibold tracking-tight text-slate-950">TeamSupport</p>
+        <p class="hidden text-xs font-medium uppercase tracking-[0.18em] text-slate-400 sm:block">Customer Operations</p>
+      </div>
+    </a>
+
+    <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+      <a href="#problem" class="hover:text-slate-950 transition-colors">The Problem</a>
+      <a href="#category" class="hover:text-slate-950 transition-colors">The Category</a>
+      <a href="#layer" class="hover:text-slate-950 transition-colors">Operating Layer</a>
+      <a href="#who" class="hover:text-slate-950 transition-colors">Who It Serves</a>
+    </nav>
+
+    <a href="#demo" class={`${btn} bg-slate-950 text-white hover:bg-slate-800`}>
+      Request a demo
+    </a>
+  </div>
+</header>
