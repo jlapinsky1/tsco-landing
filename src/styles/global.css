@@ -7,6 +7,26 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-white text-slate-900 antialiased;
+    @apply bg-stone-50 text-stone-950 antialiased;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .gap-px-grid {
+    gap: 1px;
+    background-color: rgb(231 229 228);
+  }
+
+  .gap-px-grid-dark {
+    gap: 1px;
+    background-color: rgb(41 37 36);
   }
 }

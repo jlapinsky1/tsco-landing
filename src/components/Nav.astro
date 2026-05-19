@@ -1,30 +1,34 @@
 ---
-const btn = "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2";
 ---
 
-<header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl">
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-stone-200/80 bg-stone-50/90 backdrop-blur-md">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-    <a href="/" class="flex items-center gap-3">
-      <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950 text-white">
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/>
+
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="flex h-7 w-7 items-center justify-center border border-stone-300 bg-stone-950 transition-colors group-hover:bg-stone-800">
+        <svg class="h-3.5 w-3.5 text-white" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M7 1L13 4.5V9.5L7 13L1 9.5V4.5L7 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
         </svg>
       </div>
-      <div>
-        <p class="text-lg font-semibold tracking-tight text-slate-950">TeamSupport</p>
-        <p class="hidden text-xs font-medium uppercase tracking-[0.18em] text-slate-400 sm:block">Customer Operations</p>
-      </div>
+      <span class="font-display text-base font-semibold tracking-tight text-stone-950">Forward</span>
     </a>
 
-    <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-      <a href="#problem" class="hover:text-slate-950 transition-colors">The Problem</a>
-      <a href="#category" class="hover:text-slate-950 transition-colors">The Category</a>
-      <a href="#layer" class="hover:text-slate-950 transition-colors">Operating Layer</a>
-      <a href="#who" class="hover:text-slate-950 transition-colors">Who It Serves</a>
+    <nav class="hidden items-center gap-8 md:flex">
+      <a href="#what" class="text-sm text-stone-500 transition-colors hover:text-stone-950">Engagement</a>
+      <a href="#team" class="text-sm text-stone-500 transition-colors hover:text-stone-950">Team</a>
+      <a href="#flow" class="text-sm text-stone-500 transition-colors hover:text-stone-950">The Week</a>
+      <a href="#pricing" class="text-sm text-stone-500 transition-colors hover:text-stone-950">Pricing</a>
     </nav>
 
-    <a href="#demo" class={`${btn} bg-slate-950 text-white hover:bg-slate-800`}>
-      Request a demo
+    <a
+      href="#pricing"
+      class="inline-flex items-center gap-2 border border-stone-950 bg-stone-950 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-stone-800"
+    >
+      Reserve a slot
+      <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path d="M5 12h14M13 6l6 6-6 6"/>
+      </svg>
     </a>
+
   </div>
 </header>

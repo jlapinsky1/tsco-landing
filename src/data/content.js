@@ -1,142 +1,189 @@
-export const painCards = [
-  [
-    "No clear owner",
-    "When a customer request crosses from support to billing to operations to product, nobody knows who owns it — or when it was last touched. Work disappears in the handoff.",
-  ],
-  [
-    "No repeatable process",
-    "Every team member handles complex requests differently. There are no guided playbooks, no consistent escalation paths, no standard way to move cross-functional work forward.",
-  ],
-  [
-    "No reliable record",
-    "When a request finally resolves, the history lives in email threads and Slack messages. There is no durable record of what happened, who touched it, or how long it took.",
-  ],
-];
-
-export const features = [
+export const teamRoles = [
   {
-    icon: "eye",
-    label: "Customer context",
-    title: "Tie work to the account.",
-    copy: "Connect every request to the account, contact, history, products, prior issues, and prior communication — so everyone who touches it starts informed.",
+    index: "01",
+    title: "Database Strategist",
+    discipline: "Data Architecture & Knowledge Structure",
+    description:
+      "Maps your data landscape, identifies structural gaps, and builds the foundation AI and automated workflows need to operate reliably — not just occasionally.",
   },
   {
-    icon: "user",
-    label: "Clear ownership",
-    title: "Make ownership explicit.",
-    copy: "Every request has an accountable owner, not just a queue. Ownership is visible, trackable, and transferable when work moves across teams.",
+    index: "02",
+    title: "AI Prompting Specialist",
+    discipline: "LLM Design & Behavior Engineering",
+    description:
+      "Designs, tests, and refines the prompts and configurations that turn your use cases into consistently reliable AI behaviors. No generic templates — purpose-built for your workflows.",
   },
   {
-    icon: "list",
-    label: "Guided playbooks",
-    title: "Turn repeatable work into process.",
-    copy: "Structure recurring customer request types as guided playbooks with steps, checklists, required fields, and handoff logic baked in.",
+    index: "03",
+    title: "Customer Service Workflow Expert",
+    discipline: "Operations & Process Design",
+    description:
+      "Translates your highest-friction customer service processes into clear, automatable, and measurable workflows. Knows where the handoffs break and how to fix them.",
   },
   {
-    icon: "alert",
-    label: "Escalation paths",
-    title: "Surface stuck work before it breaks.",
-    copy: "Define escalation rules by request type, account tier, SLA, or time threshold. Move urgent or stuck work to the right people automatically.",
-  },
-  {
-    icon: "clock",
-    label: "Time and effort tracking",
-    title: "Know the true cost of customer work.",
-    copy: "Track time by account, request type, team, and product area. Understand where effort is going and which customers consume the most operational capacity.",
-  },
-  {
-    icon: "archive",
-    label: "Complete record",
-    title: "Leave a durable history behind.",
-    copy: "Every action, owner change, status update, and resolution is logged. You can always answer: what happened, who handled it, and how was it resolved.",
+    index: "04",
+    title: "Value Realization Lead",
+    discipline: "Outcomes & Adoption Strategy",
+    description:
+      "Ensures every decision during the engagement maps to a measurable business outcome. Defines your path to workflow confidence, adoption momentum, and repeatable value.",
   },
 ];
 
-export const industries = [
+export const weekDays = [
   {
-    icon: "building",
-    label: "Software companies",
-    copy: "Onboarding issues, adoption blockers, technical escalations, implementation tasks, and account risk that live between support, product, and customer success.",
+    day: "01",
+    name: "MON",
+    focus: "ALIGN",
+    title: "Align on goals and friction points.",
+    description:
+      "We arrive prepared. Day one is about replacing surface-level assumptions with real alignment — identifying the actual friction points, not the assumed ones, and agreeing on what success looks like by Friday.",
+    bars: [82, 48, 91, 35],
   },
   {
-    icon: "factory",
-    label: "Manufacturers",
-    copy: "Warranty claims, dealer requests, quote questions, parts issues, technical documentation, and service escalations that span field teams and back-office systems.",
+    day: "02",
+    name: "TUE",
+    focus: "MAP",
+    title: "Map systems, data, and workflows.",
+    description:
+      "We go deep into your actual operating environment. How is data structured? Where do workflows break down? What knowledge exists but isn't accessible to AI? We build the full picture before we build anything else.",
+    bars: [100, 73, 88, 62, 45],
   },
   {
-    icon: "truck",
-    label: "Distributors",
-    copy: "Order questions, inventory issues, pricing exceptions, vendor coordination, and shipping problems that cross operations, sales, and logistics.",
+    day: "03",
+    name: "WED",
+    focus: "BUILD",
+    title: "Configure, prompt, and prototype.",
+    description:
+      "The team works directly in your environment. We configure, write prompts, design workflow logic, and build the first version of something real. This is not a whiteboard day.",
+    bars: [88, 100, 79, 95, 68],
   },
   {
-    icon: "wrench",
-    label: "Managed services",
-    copy: "Client requests, SLA-bound work, recurring service tasks, escalations, and account-level visibility that needs to move across delivery and account teams.",
+    day: "04",
+    name: "THU",
+    focus: "VALIDATE",
+    title: "Validate with real scenarios.",
+    description:
+      "We test against actual cases, edge cases, and operational realities. We iterate. We stress-test the assumptions. What works gets refined. What doesn't gets replaced.",
+    bars: [72, 84, 59, 91],
   },
   {
-    icon: "briefcase",
-    label: "Professional services",
-    copy: "Client requests, approvals, deliverables, handoffs, documentation, and time tracking that needs to move across project teams, practice leads, and clients.",
-  },
-  {
-    icon: "shield",
-    label: "Regulated organizations",
-    copy: "Audit trails, documented decisions, controlled processes, escalation history, and compliance visibility built into every customer-facing workflow.",
-  },
-];
-
-export const comparisons = [
-  {
-    against: "Help desks",
-    theirs: "Help desks manage conversations.",
-    ours: "TeamSupport manages the work behind them.",
-  },
-  {
-    against: "Project tools",
-    theirs: "Project tools manage internal tasks.",
-    ours: "TeamSupport manages work that originates from customers — with account context, SLAs, playbooks, time tracking, and a durable record.",
-  },
-  {
-    against: "Vertical SaaS",
-    theirs: "Vertical software manages industry-specific operations.",
-    ours: "TeamSupport manages customer-facing work that cuts across support, service, billing, account teams, product, and operations.",
+    day: "05",
+    name: "FRI",
+    focus: "DELIVER",
+    title: "Deliver the value plan and next steps.",
+    description:
+      "You receive a clear, prioritized roadmap: validated use cases, configurations, prompt libraries, workflow designs, and a concrete path to expanding what we built into production.",
+    bars: [54, 82, 66],
   },
 ];
 
-export const beforeState = [
-  "Requests scattered across inboxes and disconnected tools",
-  "Support owns problems it cannot solve alone",
-  "Escalations happen manually and too late",
-  "Leadership lacks operational visibility",
-  "No clear cost-to-serve by account or request type",
-  "History disappears when the ticket closes",
+export const tiers = [
+  {
+    name: "Forward Sprint",
+    tagline: "One focused problem. One week.",
+    price: "From $15,000",
+    duration: "One week · single focus area",
+    experts: "2 specialists deployed",
+    fit: "Teams with a specific, well-scoped challenge — one workflow, one AI use case, one knowledge gap.",
+    deliverables: [
+      "Scoped use case validated and configured",
+      "Prompt library for target workflow",
+      "Data and knowledge readiness report",
+      "Adoption and next-step recommendation",
+    ],
+    cta: "Reserve Sprint slot",
+    featured: false,
+  },
+  {
+    name: "Forward Plus",
+    tagline: "The full team. The full week.",
+    price: "From $30,000",
+    duration: "One week · full team deployment",
+    experts: "All 4 specialists deployed",
+    fit: "Teams ready to move across multiple workflows or use cases simultaneously with full cross-functional coverage.",
+    deliverables: [
+      "Multiple use cases validated and prioritized",
+      "Full workflow redesign documentation",
+      "AI configuration and prompt systems",
+      "Database and knowledge structure recommendations",
+      "Executive-ready value roadmap",
+    ],
+    cta: "Reserve Forward Plus",
+    featured: true,
+  },
+  {
+    name: "Forward Strategic",
+    tagline: "Deep engagement. Lasting momentum.",
+    price: "Custom",
+    duration: "Multi-week · recurring deployment",
+    experts: "Extended team · executive access",
+    fit: "Enterprises with complex operations, multiple teams, or a mandate for significant AI-enabled transformation.",
+    deliverables: [
+      "Multi-team engagement and coordination",
+      "Program-level value architecture",
+      "Workflow and AI integration roadmap",
+      "Ongoing advisory and validation support",
+      "Executive briefing and alignment sessions",
+    ],
+    cta: "Contact us",
+    featured: false,
+  },
 ];
 
-export const afterState = [
-  "Every request has context, an owner, and a guided process",
-  "Teams follow playbooks that move work forward",
-  "Escalations are defined, visible, and timely",
-  "Effort is tracked and reportable by team or account",
-  "Account history is complete and always accessible",
-  "Leaders can see exactly where customer work gets stuck",
+export const outcomes = [
+  {
+    index: "01",
+    title: "Validated AI-enabled workflows",
+    description:
+      "Customer service processes tested against real scenarios, with AI behaviors that are reliable enough to trust in production.",
+  },
+  {
+    index: "02",
+    title: "Database and knowledge readiness",
+    description:
+      "A clear picture of how your data structures support — or block — AI performance, with specific, actionable recommendations.",
+  },
+  {
+    index: "03",
+    title: "Prompts that actually work",
+    description:
+      "A tested, organized prompt library built for your specific workflows. Not generic examples — purpose-built and validated in your environment.",
+  },
+  {
+    index: "04",
+    title: "Use cases ranked by impact",
+    description:
+      "Not a list of possibilities. A prioritized, validated set of use cases you can execute in the next 30 to 90 days.",
+  },
+  {
+    index: "05",
+    title: "An executive-ready roadmap",
+    description:
+      "A document your leadership can read in ten minutes and act on. Strategy, sequencing, and the business case for what comes next.",
+  },
+  {
+    index: "06",
+    title: "Workflow confidence and adoption momentum",
+    description:
+      "Your team ends the week having built something real — and knowing how to operate it. That's how adoption begins.",
+  },
 ];
 
-export const flowSteps = [
-  { label: "Customer Request", color: "bg-slate-100 border-slate-300 text-slate-700" },
-  { label: "Context", color: "bg-blue-50 border-blue-200 text-blue-800" },
-  { label: "Owner", color: "bg-blue-50 border-blue-200 text-blue-800" },
-  { label: "Playbook", color: "bg-blue-50 border-blue-200 text-blue-800" },
-  { label: "Escalation", color: "bg-blue-50 border-blue-200 text-blue-800" },
-  { label: "Effort Tracking", color: "bg-blue-50 border-blue-200 text-blue-800" },
-  { label: "Complete Record", color: "bg-slate-950 border-slate-950 text-white" },
-];
-
-export const teamLayer = [
-  "Support",
-  "Operations",
-  "Billing",
-  "Product",
-  "Service",
-  "Account Teams",
-  "Leadership",
+export const proofPoints = [
+  {
+    label: "Built for complexity",
+    copy: "Designed for teams with complex customer service operations — not teams looking for a quick demo or a generic AI overview.",
+  },
+  {
+    label: "Real systems only",
+    copy: "We work with your actual data, your real tools, and your genuine constraints. No sandbox. No theoretical environment.",
+  },
+  {
+    label: "Practitioners, not generalists",
+    copy: "Every specialist deployed has deep domain expertise. No consultants who read a playbook last week.",
+  },
+  {
+    label: "Adaptive by design",
+    copy: "The engagement adapts to what we find on Day 1. There is no pre-written script. We solve for what's actually in front of us.",
+  },
 ];

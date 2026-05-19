@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = "TeamSupport — B2B Customer Operations",
-  description = "TeamSupport is the operating layer for complex customer work. When work originates from a customer, we make sure it has context, ownership, guided playbooks, escalation paths, time tracking, and a complete record of what happened.",
+  title = "Forward — A Focused Week to Value",
+  description = "Forward is a high-touch professional services engagement. Book a focused week with a cross-functional team of database, AI prompting, and customer service workflow experts.",
   canonical,
 } = Astro.props;
 ---
@@ -22,6 +22,12 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <slot name="head" />
   </head>
   <body>

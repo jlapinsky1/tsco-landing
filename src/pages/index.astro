@@ -1,374 +1,500 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Icon from "../components/Icon.astro";
-import Pill from "../components/Pill.astro";
 import Nav from "../components/Nav.astro";
-import {
-  painCards,
-  features,
-  industries,
-  comparisons,
-  beforeState,
-  afterState,
-  flowSteps,
-  teamLayer,
-} from "../data/content.js";
-
-const pageTitle = "TeamSupport — B2B Customer Operations";
-const pageDescription = "TeamSupport is the operating layer for complex customer work. When work originates from a customer, we make sure it has context, ownership, guided playbooks, escalation paths, time tracking, and a complete record of what happened.";
-
-const btn = "inline-flex items-center justify-center rounded-2xl px-6 py-3 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2";
-const btnPrimary = `${btn} bg-slate-950 text-white hover:bg-slate-800`;
-const btnOutline = `${btn} border border-slate-300 bg-white text-slate-700 hover:bg-slate-50`;
-const btnWhite   = `${btn} bg-white text-slate-950 hover:bg-blue-50`;
+import { teamRoles, weekDays, tiers, outcomes, proofPoints } from "../data/content.js";
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout
+  title="Forward — A Focused Week to Value"
+  description="Forward is a high-touch professional services engagement. Book a focused week with a cross-functional team of database, AI prompting, and customer service workflow experts to move from friction to measurable value."
+>
   <Nav />
 
-  <main>
+  <main class="pt-[57px]">
 
-    <!-- ─── HERO ─────────────────────────────────────────────────── -->
-    <section class="relative overflow-hidden bg-[linear-gradient(135deg,#ffffff_0%,#f4f7fb_52%,#eef6ff_100%)]">
-      <!-- ambient glows -->
-      <div class="absolute right-[-10%] top-[-15%] h-[540px] w-[540px] rounded-full bg-blue-100/60 blur-3xl pointer-events-none"></div>
-      <div class="absolute bottom-[-18%] left-[-8%] h-[440px] w-[440px] rounded-full bg-slate-200/50 blur-3xl pointer-events-none"></div>
+    <!-- ─── HERO ────────────────────────────────────────────────────────── -->
+    <section class="relative overflow-hidden border-b border-stone-200 bg-stone-50">
+      <div class="absolute inset-0 grid-bg pointer-events-none"></div>
 
       <div class="relative mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
-        <div class="max-w-4xl">
-          <Pill tone="default">B2B Customer Operations</Pill>
+        <div class="grid items-center gap-16 lg:grid-cols-[1fr_480px] xl:grid-cols-[1fr_560px]">
 
-          <h1 class="mt-7 text-6xl font-semibold tracking-[-0.06em] text-slate-950 sm:text-7xl lg:text-8xl">
-            Customer work needs<br class="hidden lg:block" /> an operating layer.
-          </h1>
+          <!-- Text -->
+          <div class="max-w-2xl">
+            <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-400">
+              Professional Services Engagement
+            </p>
 
-          <p class="mt-7 max-w-2xl text-xl leading-8 text-slate-600">
-            TeamSupport helps B2B teams manage the complex work that originates from customers — with context, ownership, guided playbooks, escalation paths, time and effort tracking, and a complete record of what happened.
-          </p>
+            <h1 class="font-display mt-6 text-5xl font-semibold leading-[1.05] tracking-tight text-stone-950 sm:text-6xl lg:text-[4.25rem]">
+              Move from AI ambition to value in one focused week.
+            </h1>
 
-          <div class="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a href="#layer" class={`${btnPrimary} px-7 py-4 text-base`}>
-              See the customer operations layer <Icon name="arrowRight" class="ml-2 h-4 w-4" />
-            </a>
-            <a href="#category" class={`${btnOutline} px-7 py-4 text-base`}>
-              Explore the concept
-            </a>
+            <p class="mt-6 max-w-xl text-lg leading-8 text-stone-500">
+              Forward pairs your team with a cross-functional group of database, AI prompting, and customer service workflow experts. In one week, we uncover your highest-value use cases, build against real constraints, and leave you with a validated path forward.
+            </p>
+
+            <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#pricing"
+                class="inline-flex items-center justify-center gap-2 border border-stone-950 bg-stone-950 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-stone-800"
+              >
+                Reserve a Forward slot
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a
+                href="#what"
+                class="inline-flex items-center justify-center gap-2 border border-stone-300 bg-white px-6 py-3.5 text-sm font-semibold text-stone-700 transition-colors hover:bg-stone-50"
+              >
+                See engagement options
+              </a>
+            </div>
           </div>
-        </div>
 
-        <!-- Operating layer flow diagram -->
-        <div class="mt-14 overflow-x-auto">
-          <div class="flex min-w-max items-center gap-0">
-            {flowSteps.map((step, i) => (
-              <div class="flex items-center">
-                <div class={`rounded-2xl border px-5 py-3 text-sm font-semibold whitespace-nowrap shadow-sm ${step.color}`}>
-                  {step.label}
-                </div>
-                {i < flowSteps.length - 1 && (
-                  <div class="mx-2 flex items-center text-slate-400">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg>
-                  </div>
-                )}
+          <!-- Deployment Grid Visual -->
+          <div class="w-full overflow-x-auto">
+            <div class="min-w-[340px] border border-stone-200 bg-white shadow-sm">
+
+              <!-- Header bar -->
+              <div class="flex items-center justify-between border-b border-stone-100 bg-stone-50 px-4 py-2.5">
+                <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400">
+                  Forward / Week 01
+                </span>
+                <span class="flex items-center gap-1.5 font-mono text-[10px] font-semibold text-emerald-700">
+                  <span class="relative flex h-2 w-2" aria-hidden="true">
+                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-50"></span>
+                    <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-600"></span>
+                  </span>
+                  ACTIVE
+                </span>
               </div>
-            ))}
-          </div>
-          <p class="mt-4 text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
-            The operating layer for work that starts with your customer
-          </p>
-        </div>
 
-        <!-- Stat bar -->
-        <div class="mt-12 max-w-3xl rounded-[1.5rem] border border-slate-200 bg-white/70 p-2 shadow-sm backdrop-blur">
-          <div class="divide-y divide-slate-200 sm:grid sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            <div class="p-4">
-              <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Category</p>
-              <p class="mt-2 text-sm font-medium text-slate-800">B2B Customer Operations</p>
-            </div>
-            <div class="p-4">
-              <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Audience</p>
-              <p class="mt-2 text-sm font-medium text-slate-800">Complex B2B operating models</p>
-            </div>
-            <div class="p-4">
-              <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Not</p>
-              <p class="mt-2 text-sm font-medium text-slate-800">A help desk. Not a project tool.</p>
+              <!-- Five-day columns -->
+              <div class="grid grid-cols-5 divide-x divide-stone-100">
+                {weekDays.map((day) => (
+                  <div class="group flex flex-col gap-2.5 p-3 transition-colors hover:bg-stone-50">
+                    <div>
+                      <div class="font-mono text-2xl font-bold leading-none text-stone-100 transition-colors group-hover:text-emerald-100">
+                        {day.day}
+                      </div>
+                      <div class="mt-1 font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-stone-400">
+                        {day.name}
+                      </div>
+                    </div>
+                    <div class="font-mono text-[9px] font-bold uppercase tracking-[0.16em] text-emerald-700">
+                      {day.focus}
+                    </div>
+                    <div class="flex-1 space-y-1 py-0.5">
+                      {day.bars.map((w) => (
+                        <div
+                          class="h-px rounded-full bg-emerald-800/30 transition-all group-hover:bg-emerald-700/40"
+                          style={`width: ${w}%`}
+                        ></div>
+                      ))}
+                    </div>
+                    <div class="flex flex-wrap gap-0.5">
+                      {["DB", "AI", "CS", "VR"].map((role) => (
+                        <span class="border border-stone-200 bg-stone-50 px-1 py-0.5 font-mono text-[8px] font-semibold uppercase tracking-wide text-stone-400 transition-colors group-hover:border-stone-300 group-hover:text-stone-500">
+                          {role}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <!-- Footer stats -->
+              <div class="grid grid-cols-3 divide-x divide-stone-100 border-t border-stone-100 bg-stone-50">
+                {[["4", "Specialists"], ["5", "Days"], ["1", "Team"]].map(([num, label]) => (
+                  <div class="px-3 py-2.5 text-center">
+                    <div class="font-display text-lg font-bold text-stone-950">{num}</div>
+                    <div class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-stone-400">{label}</div>
+                  </div>
+                ))}
+              </div>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ─── PROBLEM ───────────────────────────────────────────────── -->
-    <section id="problem" class="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-      <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <div>
-          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">The problem</p>
-          <h2 class="mt-5 text-5xl font-semibold tracking-[-0.045em] text-slate-950 lg:text-6xl">
-            Customer requests do not stay in the support queue.
+
+    <!-- ─── WHAT FORWARD IS ──────────────────────────────────────────────── -->
+    <section id="what" class="bg-stone-950 px-5 py-24 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+
+        <div class="mb-16 max-w-3xl">
+          <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500">
+            What Forward is
+          </p>
+          <h2 class="font-display mt-5 text-5xl font-semibold leading-[1.08] tracking-tight text-white lg:text-6xl">
+            Not a workshop.<br />Not an assessment.<br />A deployment.
           </h2>
-          <p class="mt-5 text-lg leading-8 text-slate-600">
-            A customer issue can quickly become a billing question, a product escalation, a service request, an implementation blocker, a warranty claim, an account risk, or an operational exception. When that work is managed across inboxes, spreadsheets, and disconnected tools, ownership breaks down.
+        </div>
+
+        <div class="gap-px-grid-dark grid sm:grid-cols-2">
+          <div class="bg-stone-950 p-10">
+            <p class="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-stone-600">01</p>
+            <h3 class="font-display mt-5 text-xl font-semibold text-white">Focused, not scattered.</h3>
+            <p class="mt-4 text-sm leading-7 text-stone-400">
+              One week. One mandate. We agree on the most important problems before we arrive, and we stay focused on them. Every hour is oriented around getting you to a specific outcome.
+            </p>
+          </div>
+          <div class="bg-stone-950 p-10">
+            <p class="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-stone-600">02</p>
+            <h3 class="font-display mt-5 text-xl font-semibold text-white">Embedded, not external.</h3>
+            <p class="mt-4 text-sm leading-7 text-stone-400">
+              The Forward team works inside your environment — with your data, your tools, your constraints. We are not observers. We are operators.
+            </p>
+          </div>
+          <div class="bg-stone-950 p-10">
+            <p class="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-stone-600">03</p>
+            <h3 class="font-display mt-5 text-xl font-semibold text-white">Practical, not theoretical.</h3>
+            <p class="mt-4 text-sm leading-7 text-stone-400">
+              We do not produce decks full of possibilities. We configure, we build, we test, and we validate. By Friday, you have something real to show.
+            </p>
+          </div>
+          <div class="bg-stone-950 p-10">
+            <p class="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-stone-600">04</p>
+            <h3 class="font-display mt-5 text-xl font-semibold text-white">Accountable, not advisory.</h3>
+            <p class="mt-4 text-sm leading-7 text-stone-400">
+              We take responsibility for the outcomes of the week. If a path is not working, we change course. We do not wait to be directed. We act.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-px border-t border-stone-800 pt-8">
+          <p class="max-w-2xl text-base leading-8 text-stone-400">
+            Forward is designed to close the gap between what AI can do for your business and what your business is actually getting from it — in one focused week.
           </p>
         </div>
 
-        <div class="rounded-[2rem] border border-slate-200 bg-white p-3 shadow-xl shadow-slate-900/5">
-          {painCards.map(([title, copy], index) => (
-            <div class={`grid gap-4 rounded-3xl p-6 sm:grid-cols-[160px_1fr] ${index % 2 === 0 ? "bg-slate-50" : "bg-white"}`}>
-              <div class="flex items-center gap-3">
-                <div class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600">
-                  <Icon name="x" class="h-4 w-4" />
+      </div>
+    </section>
+
+
+    <!-- ─── THE TEAM ─────────────────────────────────────────────────────── -->
+    <section id="team" class="border-b border-stone-200 px-5 py-24 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+
+        <div class="mb-14 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-400">
+              The Forward team
+            </p>
+            <h2 class="font-display mt-5 text-5xl font-semibold tracking-tight text-stone-950 lg:text-6xl">
+              Deployed as one unit.
+            </h2>
+          </div>
+          <p class="max-w-xs text-sm leading-7 text-stone-500 lg:text-right">
+            A cross-functional team built for this type of engagement — not generalists, not one specialist at a time.
+          </p>
+        </div>
+
+        <div class="gap-px-grid grid sm:grid-cols-2 lg:grid-cols-4">
+          {teamRoles.map((role) => (
+            <div class="group flex flex-col bg-white p-8 transition-colors hover:bg-stone-50">
+              <div class="flex items-start justify-between">
+                <div class="flex h-7 w-7 items-center justify-center border border-stone-200 transition-colors group-hover:border-stone-300">
+                  <span class="font-mono text-[10px] font-bold text-stone-400">{role.index}</span>
                 </div>
-                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Problem 0{index + 1}</p>
               </div>
+              <h3 class="font-display mt-8 text-lg font-semibold tracking-tight text-stone-950">
+                {role.title}
+              </h3>
+              <p class="mt-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-700">
+                {role.discipline}
+              </p>
+              <p class="mt-5 flex-1 text-sm leading-6 text-stone-500">
+                {role.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─── THE WEEK / ENGAGEMENT FLOW ──────────────────────────────────── -->
+    <section id="flow" class="px-5 py-24 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+
+        <div class="mb-14 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-400">
+              The engagement flow
+            </p>
+            <h2 class="font-display mt-5 text-5xl font-semibold tracking-tight text-stone-950 lg:text-6xl">
+              Five days.<br />Real momentum.
+            </h2>
+          </div>
+          <p class="max-w-xs text-sm leading-7 text-stone-500 lg:text-right">
+            Every day has a purpose. Every day ends with a handoff to the next.
+          </p>
+        </div>
+
+        <div class="divide-y divide-stone-100">
+          {weekDays.map((day) => (
+            <div class="group grid gap-6 py-10 lg:grid-cols-[220px_1fr_1fr] lg:gap-16 lg:items-start">
+              <div class="flex items-center gap-5">
+                <div class="font-display text-7xl font-bold leading-none text-stone-100 transition-colors group-hover:text-emerald-800/10 select-none">
+                  {day.day}
+                </div>
+                <div>
+                  <p class="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-400">
+                    {day.name}
+                  </p>
+                  <p class="mt-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-700">
+                    {day.focus}
+                  </p>
+                </div>
+              </div>
+              <h3 class="font-display text-2xl font-semibold tracking-tight text-stone-950">
+                {day.title}
+              </h3>
+              <p class="text-sm leading-7 text-stone-500">
+                {day.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─── PRICING ──────────────────────────────────────────────────────── -->
+    <section id="pricing" class="border-y border-stone-200 bg-stone-50 px-5 py-24 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+
+        <div class="mb-14 text-center">
+          <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-400">
+            Engagement options
+          </p>
+          <h2 class="font-display mx-auto mt-5 max-w-2xl text-5xl font-semibold tracking-tight text-stone-950 lg:text-6xl">
+            Choose your Forward slot.
+          </h2>
+          <p class="mx-auto mt-5 max-w-lg text-base leading-7 text-stone-500">
+            Engagements are scheduled in advance. Slots are limited to ensure full team focus and quality for every deployment.
+          </p>
+        </div>
+
+        <div class="gap-px-grid grid sm:grid-cols-3">
+          {tiers.map((tier) => (
+            <div class={`flex flex-col p-8 lg:p-10 ${tier.featured ? 'bg-stone-950 text-white' : 'bg-white'}`}>
+
               <div>
-                <h3 class="text-xl font-semibold tracking-tight text-slate-950">{title}</h3>
-                <p class="mt-2 text-sm leading-6 text-slate-600">{copy}</p>
+                <p class={`font-mono text-[10px] font-bold uppercase tracking-[0.22em] ${tier.featured ? 'text-emerald-400' : 'text-emerald-700'}`}>
+                  {tier.name}
+                </p>
+                <p class={`font-display mt-2 text-xl font-semibold ${tier.featured ? 'text-white' : 'text-stone-950'}`}>
+                  {tier.tagline}
+                </p>
+              </div>
+
+              <div class={`my-8 border-t ${tier.featured ? 'border-stone-800' : 'border-stone-100'}`}></div>
+
+              <div class="mb-8">
+                <p class={`font-display text-4xl font-bold ${tier.featured ? 'text-white' : 'text-stone-950'}`}>
+                  {tier.price}
+                </p>
+                <p class={`mt-1 font-mono text-[10px] font-medium uppercase tracking-[0.16em] ${tier.featured ? 'text-stone-500' : 'text-stone-400'}`}>
+                  {tier.duration}
+                </p>
+              </div>
+
+              <div class={`mb-6 p-4 text-sm leading-6 ${tier.featured ? 'bg-stone-900 text-stone-300' : 'bg-stone-50 text-stone-600'}`}>
+                <p class={`mb-2 font-mono text-[9px] font-bold uppercase tracking-[0.2em] ${tier.featured ? 'text-stone-500' : 'text-stone-400'}`}>
+                  Best for
+                </p>
+                {tier.fit}
+              </div>
+
+              <p class={`mb-4 font-mono text-[9px] font-bold uppercase tracking-[0.2em] ${tier.featured ? 'text-stone-500' : 'text-stone-400'}`}>
+                Deliverables
+              </p>
+              <ul class="flex-1 space-y-2.5">
+                {tier.deliverables.map((d) => (
+                  <li class="flex items-start gap-3 text-sm leading-6">
+                    <svg
+                      class={`mt-0.5 h-3.5 w-3.5 flex-shrink-0 ${tier.featured ? 'text-emerald-400' : 'text-emerald-700'}`}
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6"/>
+                    </svg>
+                    <span class={tier.featured ? 'text-stone-300' : 'text-stone-600'}>{d}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-8">
+                <p class={`mb-4 font-mono text-[10px] font-medium uppercase tracking-[0.14em] ${tier.featured ? 'text-stone-500' : 'text-stone-400'}`}>
+                  {tier.experts}
+                </p>
+                <a
+                  href="mailto:forward@teamsupport.com"
+                  class={`inline-flex w-full items-center justify-center gap-2 border px-5 py-3 text-sm font-semibold transition-colors ${
+                    tier.featured
+                      ? 'border-emerald-600 bg-emerald-600 text-white hover:bg-emerald-500 hover:border-emerald-500'
+                      : 'border-stone-900 bg-stone-950 text-white hover:bg-stone-800'
+                  }`}
+                >
+                  {tier.cta}
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                  </svg>
+                </a>
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─── OUTCOMES ─────────────────────────────────────────────────────── -->
+    <section id="outcomes" class="px-5 py-24 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+
+        <div class="mb-14 grid gap-8 lg:grid-cols-2 lg:items-end">
+          <div>
+            <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-400">
+              What you leave with
+            </p>
+            <h2 class="font-display mt-5 text-5xl font-semibold tracking-tight text-stone-950 lg:text-6xl">
+              Concrete outcomes.<br />Not slide decks.
+            </h2>
+          </div>
+          <p class="max-w-sm text-sm leading-7 text-stone-500 lg:text-right">
+            Every Forward engagement ends with deliverables you can act on — not a report that sits in a folder.
+          </p>
+        </div>
+
+        <div class="gap-px-grid grid sm:grid-cols-2 lg:grid-cols-3">
+          {outcomes.map((outcome) => (
+            <div class="group bg-white p-8 transition-colors hover:bg-stone-50">
+              <p class="font-mono text-[10px] font-bold text-stone-200 transition-colors group-hover:text-stone-300">
+                {outcome.index}
+              </p>
+              <h3 class="font-display mt-5 text-xl font-semibold tracking-tight text-stone-950">
+                {outcome.title}
+              </h3>
+              <p class="mt-3 text-sm leading-7 text-stone-500">
+                {outcome.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─── CREDIBILITY ──────────────────────────────────────────────────── -->
+    <section class="border-y border-stone-900 bg-stone-950 px-5 py-24 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+
+        <div class="mb-14 grid gap-8 lg:grid-cols-2 lg:items-end">
+          <div>
+            <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-600">
+              Why Forward works
+            </p>
+            <h2 class="font-display mt-5 text-4xl font-semibold tracking-tight text-white lg:text-5xl">
+              Built for real operations.<br />Led by practitioners.
+            </h2>
+          </div>
+          <p class="max-w-xs text-sm leading-7 text-stone-500 lg:text-right">
+            Forward is not generic consulting. The team is selected for this type of engagement specifically.
+          </p>
+        </div>
+
+        <div class="gap-px-grid-dark grid sm:grid-cols-2">
+          {proofPoints.map((point) => (
+            <div class="flex items-start gap-6 bg-stone-950 p-8">
+              <span class="font-mono text-sm font-semibold text-stone-700 mt-0.5 flex-shrink-0">→</span>
+              <div>
+                <p class="font-display text-base font-semibold text-white">{point.label}</p>
+                <p class="mt-3 text-sm leading-7 text-stone-400">{point.copy}</p>
               </div>
             </div>
           ))}
         </div>
+
+        <div class="mt-px border-t border-stone-800 pt-8">
+          <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-stone-600">
+            Forward engagements are capped. We limit concurrent deployments to maintain full team presence and quality.
+          </p>
+        </div>
+
       </div>
     </section>
 
-    <!-- ─── CATEGORY ──────────────────────────────────────────────── -->
-    <section id="category" class="bg-slate-950 px-5 py-20 text-white lg:px-8">
+
+    <!-- ─── FINAL CTA ─────────────────────────────────────────────────────── -->
+    <section id="book" class="px-5 py-32 lg:px-8">
       <div class="mx-auto max-w-7xl">
-        <div class="grid items-center gap-12 lg:grid-cols-[1fr_1fr]">
+
+        <div class="grid gap-16 lg:grid-cols-[1fr_auto] lg:items-center">
 
           <div>
-            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">Introducing a new category</p>
-            <h2 class="mt-5 text-5xl font-semibold tracking-[-0.045em] lg:text-6xl">
-              B2B Customer Operations
+            <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-400">
+              Book your week
+            </p>
+            <h2 class="font-display mt-5 text-7xl font-bold tracking-tight text-stone-950 leading-[0.95] lg:text-9xl">
+              Forward.
             </h2>
-            <p class="mt-6 text-lg leading-8 text-slate-300">
-              B2B Customer Operations is the discipline of managing the work that starts with customers and moves across internal teams. It sits between support, operations, service, billing, account management, product, and leadership — and right now, no single system owns it.
+            <p class="mt-8 max-w-lg text-lg leading-8 text-stone-500">
+              Bring us your highest-friction workflow.<br />
+              Leave with a validated path to value.
             </p>
-            <p class="mt-4 text-lg leading-8 text-slate-300">
-              TeamSupport is the operating layer that connects them.
-            </p>
-          </div>
-
-          <!-- Team layer diagram -->
-          <div class="rounded-[2rem] border border-white/10 bg-white/[0.06] p-8 shadow-2xl">
-            <p class="mb-6 text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Work flows through your entire organization</p>
-            <div class="space-y-2">
-              {teamLayer.map((team) => (
-                <div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-3">
-                  <div class="h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0"></div>
-                  <span class="text-sm font-medium text-white">{team}</span>
-                </div>
-              ))}
-            </div>
-            <div class="mt-6 rounded-2xl border border-blue-500/30 bg-blue-600/20 px-5 py-4 text-center">
-              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-blue-300">Connected through</p>
-              <p class="mt-1 text-lg font-semibold text-white">TeamSupport Customer Operations Layer</p>
+            <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="mailto:forward@teamsupport.com"
+                class="inline-flex items-center justify-center gap-2 border border-stone-950 bg-stone-950 px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-stone-800"
+              >
+                Book your Forward week
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a
+                href="#pricing"
+                class="inline-flex items-center justify-center gap-2 border border-stone-300 px-7 py-4 text-sm font-semibold text-stone-700 transition-colors hover:bg-stone-100"
+              >
+                View engagement options
+              </a>
             </div>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── POSITIONING ───────────────────────────────────────────── -->
-    <section class="mx-auto max-w-5xl px-5 py-20 text-center lg:px-8">
-      <p class="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">How it fits</p>
-      <h2 class="mt-5 text-5xl font-semibold tracking-[-0.05em] text-slate-950 lg:text-6xl">
-        Not just tickets. Not just tasks.<br class="hidden sm:block" /> Customer operations.
-      </h2>
-      <p class="mx-auto mt-7 max-w-2xl text-xl leading-8 text-slate-600">
-        TeamSupport is not a help desk. It is not a project management tool. It is the system of record for work that starts with your customers and needs to move across your entire organization.
-      </p>
-
-      <div class="mt-12 grid gap-5 text-left sm:grid-cols-3">
-        {comparisons.map((c) => (
-          <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">vs. {c.against}</p>
-            <p class="mt-5 text-base leading-7 text-slate-500">{c.theirs}</p>
-            <div class="my-5 h-px bg-slate-100"></div>
-            <p class="text-base font-semibold leading-7 text-slate-950">{c.ours}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <!-- ─── OPERATING LAYER ───────────────────────────────────────── -->
-    <section id="layer" class="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-      <div class="mb-10 max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">The operating layer</p>
-        <h2 class="mt-5 text-5xl font-semibold tracking-[-0.045em] text-slate-950 lg:text-6xl">
-          Every request gets what it needs to move.
-        </h2>
-        <p class="mt-5 text-lg leading-8 text-slate-600">
-          Six capabilities that give customer work the structure, visibility, and accountability it needs to move through your organization without getting lost.
-        </p>
-      </div>
-
-      <div class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl shadow-slate-900/5">
-        {features.map((f, i) => (
-          <div class={`grid gap-6 border-b border-slate-100 p-7 last:border-b-0 md:grid-cols-[200px_1fr_1.8fr] md:items-center`}>
-            <div class="flex items-center gap-4">
-              <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
-                <Icon name={f.icon} class="h-5 w-5" />
-              </div>
-              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">{f.label}</span>
-            </div>
-            <div>
-              <h3 class="text-2xl font-semibold tracking-tight text-slate-950">{f.title}</h3>
-            </div>
-            <p class="text-sm leading-7 text-slate-600">{f.copy}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <!-- ─── WHO IT SERVES ─────────────────────────────────────────── -->
-    <section id="who" class="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-      <div class="mb-10 max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">Who it serves</p>
-        <h2 class="mt-5 text-5xl font-semibold tracking-[-0.045em] text-slate-950 lg:text-6xl">
-          One concept. Many B2B operating models.
-        </h2>
-        <p class="mt-5 text-lg leading-8 text-slate-600">
-          Any B2B organization where customer work is complex, cross-functional, and consequential.
-        </p>
-      </div>
-
-      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {industries.map((ind) => (
-          <div class="rounded-3xl border border-slate-100 bg-white p-7 shadow-sm hover:shadow-md transition-shadow">
-            <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
-              <Icon name={ind.icon} class="h-5 w-5" />
-            </div>
-            <h3 class="mt-5 text-lg font-semibold tracking-tight text-slate-950">{ind.label}</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-600">{ind.copy}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <!-- ─── AI SECTION ────────────────────────────────────────────── -->
-    <section class="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-      <div class="grid items-center gap-12 rounded-[2rem] bg-white p-8 shadow-xl shadow-slate-900/5 lg:grid-cols-[1fr_1fr] lg:p-12">
-
-        <div>
-          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">AI and agents</p>
-          <h2 class="mt-5 text-5xl font-semibold tracking-[-0.045em] text-slate-950 lg:text-6xl">
-            AI can move faster when customer work has structure.
-          </h2>
-          <p class="mt-6 text-lg leading-8 text-slate-600">
-            AI agents can retrieve data, summarize history, draft responses, update tools, and trigger actions. But companies still need a governed place where customer work is owned, tracked, escalated, measured, and remembered.
-          </p>
-          <p class="mt-4 text-lg leading-8 text-slate-600">
-            TeamSupport gives AI the operational structure to act inside.
-          </p>
-        </div>
-
-        <div class="space-y-4">
-          <div class="rounded-3xl border border-slate-100 bg-slate-50 p-6">
-            <div class="flex items-start gap-4">
-              <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
-                <Icon name="zap" class="h-5 w-5" />
-              </div>
-              <div>
-                <h3 class="font-semibold text-slate-950">AI agents execute. TeamSupport governs.</h3>
-                <p class="mt-2 text-sm leading-6 text-slate-600">Claude and MCP servers can connect tools and automate tasks. TeamSupport is the system of record where customer work is structured, owned, audited, and remembered.</p>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-3xl border border-blue-100 bg-blue-50 p-6">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">Key distinction</p>
-            <p class="mt-3 text-xl font-semibold text-slate-950">
-              MCP connects the tools.<br />TeamSupport governs the customer work.
+          <!-- Side stat block -->
+          <div class="border border-stone-200 bg-stone-50 p-8 lg:w-56">
+            <div class="font-display text-8xl font-bold leading-none text-stone-100">5</div>
+            <div class="mt-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400">Days</div>
+            <div class="my-7 h-px bg-stone-200"></div>
+            <div class="font-display text-8xl font-bold leading-none text-stone-100">4</div>
+            <div class="mt-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400">Specialists</div>
+            <div class="my-7 h-px bg-stone-200"></div>
+            <p class="text-xs leading-6 text-stone-400">
+              Most teams spend months circling the same friction points. One Forward week cuts through it.
             </p>
           </div>
-          <div class="rounded-3xl border border-slate-100 bg-slate-50 p-6">
-            <div class="flex items-start gap-4">
-              <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
-                <Icon name="gitBranch" class="h-5 w-5" />
-              </div>
-              <div>
-                <h3 class="font-semibold text-slate-950">Structure AI can act inside</h3>
-                <p class="mt-2 text-sm leading-6 text-slate-600">When customer work has context, ownership, and a durable record, AI has the structure it needs to operate reliably — not just quickly.</p>
-              </div>
-            </div>
-          </div>
+
         </div>
 
-      </div>
-    </section>
-
-    <!-- ─── BEFORE / AFTER ────────────────────────────────────────── -->
-    <section class="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-      <div class="mb-10 max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">Outcomes</p>
-        <h2 class="mt-5 text-5xl font-semibold tracking-[-0.045em] text-slate-950 lg:text-6xl">
-          From customer chaos to accountable work.
-        </h2>
-      </div>
-
-      <div class="grid gap-5 lg:grid-cols-2">
-        <!-- Before -->
-        <div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-          <div class="mb-6 flex items-center gap-3">
-            <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-red-50 text-red-500">
-              <Icon name="x" class="h-4 w-4" />
-            </div>
-            <p class="font-semibold text-slate-950">Without an operating layer</p>
-          </div>
-          <div class="space-y-3">
-            {beforeState.map((item) => (
-              <div class="flex items-start gap-3 rounded-2xl bg-slate-50 px-5 py-4">
-                <Icon name="x" class="mt-0.5 h-4 w-4 flex-shrink-0 text-red-400" />
-                <p class="text-sm leading-6 text-slate-600">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- After -->
-        <div class="rounded-[2rem] border border-blue-100 bg-blue-50 p-8 shadow-sm">
-          <div class="mb-6 flex items-center gap-3">
-            <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-white">
-              <Icon name="check" class="h-4 w-4" />
-            </div>
-            <p class="font-semibold text-slate-950">With TeamSupport</p>
-          </div>
-          <div class="space-y-3">
-            {afterState.map((item) => (
-              <div class="flex items-start gap-3 rounded-2xl bg-white px-5 py-4 shadow-sm">
-                <Icon name="check" class="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
-                <p class="text-sm leading-6 text-slate-700">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── FINAL CTA ──────────────────────────────────────────────── -->
-    <section id="demo" class="px-5 pb-20 pt-10 lg:px-8">
-      <div class="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-slate-950 px-8 py-16 text-center text-white shadow-2xl shadow-slate-900/20 lg:px-20">
-        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">Get started</p>
-        <h2 class="mx-auto mt-5 max-w-4xl text-5xl font-semibold tracking-[-0.05em] lg:text-7xl">
-          Build an operating layer for the work your customers create.
-        </h2>
-        <p class="mx-auto mt-7 max-w-2xl text-lg leading-8 text-slate-300">
-          See how TeamSupport helps B2B companies manage complex customer work across teams, systems, and accounts.
-        </p>
-        <div class="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <a href="mailto:demo@teamsupport.com" class={`${btnWhite} px-8 py-4 text-base`}>
-            Request a demo <Icon name="arrowRight" class="ml-2 h-4 w-4" />
-          </a>
-        </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-slate-200 bg-white">
-    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-slate-500 md:flex-row md:items-center md:justify-between lg:px-8">
-      <p class="font-semibold text-slate-950">TeamSupport</p>
-      <p>The operating layer for B2B customer work.</p>
-      <p>Context. Ownership. Process. Proof.</p>
+
+  <!-- ─── FOOTER ──────────────────────────────────────────────────────────── -->
+  <footer class="border-t border-stone-200">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 md:flex-row md:items-center md:justify-between lg:px-8">
+      <p class="font-display text-sm font-semibold text-stone-950">Forward</p>
+      <p class="text-xs text-stone-400">A professional services engagement by TeamSupport.</p>
+      <p class="text-xs text-stone-400">&copy; 2025 TeamSupport, Inc.</p>
     </div>
   </footer>
 
