@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
-import { teamRoles, weekDays, tiers, outcomes, proofPoints } from "../data/content.js";
+import { teamRoles, weekDays, outcomes, proofPoints } from "../data/content.js";
 ---
 
 <Layout
-  title="Forward — A Focused Week to Value"
+  title="Forward: A Focused Week to Value"
   description="Forward is a high-touch professional services engagement. Book a focused week with a cross-functional team of database, AI prompting, and customer service workflow experts to move from friction to measurable value."
 >
   <Nav />
@@ -22,7 +22,7 @@ import { teamRoles, weekDays, tiers, outcomes, proofPoints } from "../data/conte
           <!-- Text -->
           <div class="max-w-2xl">
             <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-400">
-              Professional Services Engagement
+              The AI Outcomes Intensive
             </p>
 
             <h1 class="font-display mt-6 text-5xl font-semibold leading-[1.05] tracking-tight text-stone-950 sm:text-6xl lg:text-[4.25rem]">
@@ -145,7 +145,7 @@ import { teamRoles, weekDays, tiers, outcomes, proofPoints } from "../data/conte
             <p class="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-stone-600">02</p>
             <h3 class="font-display mt-5 text-xl font-semibold text-white">Embedded, not external.</h3>
             <p class="mt-4 text-sm leading-7 text-stone-400">
-              The Forward team works inside your environment — with your data, your tools, your constraints. We are not observers. We are operators.
+              The Forward team works inside your environment, with your data, your tools, your constraints. We are not observers. We are operators.
             </p>
           </div>
           <div class="bg-stone-950 p-10">
@@ -166,7 +166,7 @@ import { teamRoles, weekDays, tiers, outcomes, proofPoints } from "../data/conte
 
         <div class="mt-px border-t border-stone-800 pt-8">
           <p class="max-w-2xl text-base leading-8 text-stone-400">
-            Forward is designed to close the gap between what AI can do for your business and what your business is actually getting from it — in one focused week.
+            Forward is designed to close the gap between what AI can do for your business and what your business is actually getting from it, in one focused week.
           </p>
         </div>
 
@@ -188,7 +188,7 @@ import { teamRoles, weekDays, tiers, outcomes, proofPoints } from "../data/conte
             </h2>
           </div>
           <p class="max-w-xs text-sm leading-7 text-stone-500 lg:text-right">
-            A cross-functional team built for this type of engagement — not generalists, not one specialist at a time.
+            A cross-functional team built for this type of engagement, not generalists, not one specialist at a time.
           </p>
         </div>
 
@@ -269,87 +269,119 @@ import { teamRoles, weekDays, tiers, outcomes, proofPoints } from "../data/conte
     <section id="pricing" class="border-y border-stone-200 bg-stone-50 px-5 py-24 lg:px-8">
       <div class="mx-auto max-w-7xl">
 
-        <div class="mb-14 text-center">
-          <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-400">
-            Engagement options
-          </p>
-          <h2 class="font-display mx-auto mt-5 max-w-2xl text-5xl font-semibold tracking-tight text-stone-950 lg:text-6xl">
-            Choose your Forward slot.
-          </h2>
-          <p class="mx-auto mt-5 max-w-lg text-base leading-7 text-stone-500">
-            Engagements are scheduled in advance. Slots are limited to ensure full team focus and quality for every deployment.
-          </p>
+        <!-- Scarcity banner -->
+        <div class="mb-10 flex flex-col gap-3 border border-stone-200 bg-white px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex items-center gap-3">
+            <span class="relative flex h-2 w-2 flex-shrink-0" aria-hidden="true">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-50"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-600"></span>
+            </span>
+            <span class="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-stone-500">
+              Limited availability, Summer 2026
+            </span>
+          </div>
+          <span class="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-stone-400">
+            2 slots / week &nbsp;·&nbsp; June to August
+          </span>
         </div>
 
-        <div class="gap-px-grid grid sm:grid-cols-3">
-          {tiers.map((tier) => (
-            <div class={`flex flex-col p-8 lg:p-10 ${tier.featured ? 'bg-stone-950 text-white' : 'bg-white'}`}>
+        <!-- Main pricing block -->
+        <div class="gap-px-grid grid lg:grid-cols-2">
 
-              <div>
-                <p class={`font-mono text-[10px] font-bold uppercase tracking-[0.22em] ${tier.featured ? 'text-emerald-400' : 'text-emerald-700'}`}>
-                  {tier.name}
+          <!-- Left: The fee -->
+          <div class="flex flex-col bg-white p-10 lg:p-14">
+            <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-400">
+              Camp Fee
+            </p>
+            <div class="font-display mt-4 text-8xl font-bold leading-none tracking-tight text-stone-950 lg:text-9xl">
+              $2,500
+            </div>
+
+            <div class="my-8 h-px bg-stone-100"></div>
+
+            <p class="font-display text-3xl font-semibold tracking-tight text-stone-950">
+              Your fee can go to zero.
+            </p>
+            <p class="mt-5 max-w-sm text-sm leading-7 text-stone-500">
+              Refer a company that becomes a TeamSupport customer, or help identify an expansion opportunity inside your own organization, and we'll credit that value directly against your $2,500 fee. Enough credits and your Forward Week is fully covered.
+            </p>
+
+            <div class="mt-10">
+              <a
+                href="mailto:forward@teamsupport.com"
+                class="inline-flex items-center gap-2 border border-stone-950 bg-stone-950 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-stone-800"
+              >
+                Reserve your slot
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: The mechanics -->
+          <div class="flex flex-col bg-stone-950 p-10 lg:p-14">
+            <p class="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500">
+              How the reduction works
+            </p>
+
+            <div class="mt-8 flex-1 space-y-px">
+
+              <!-- Path 01 -->
+              <div class="border border-stone-800 p-6 transition-colors hover:border-stone-700">
+                <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-500">
+                  Path 01 &nbsp;·&nbsp; Referral Credit
                 </p>
-                <p class={`font-display mt-2 text-xl font-semibold ${tier.featured ? 'text-white' : 'text-stone-950'}`}>
-                  {tier.tagline}
+                <h3 class="font-display mt-3 text-lg font-semibold text-white">
+                  Bring another team Forward
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-stone-400">
+                  When you refer a new company that becomes a TeamSupport customer, we'll credit the value of that referral toward your Forward Week.
+                </p>
+                <p class="mt-4 font-mono text-[10px] text-stone-600">
+                  Referral value offsets your fee dollar for dollar.
                 </p>
               </div>
 
-              <div class={`my-8 border-t ${tier.featured ? 'border-stone-800' : 'border-stone-100'}`}></div>
-
-              <div class="mb-8">
-                <p class={`font-display text-4xl font-bold ${tier.featured ? 'text-white' : 'text-stone-950'}`}>
-                  {tier.price}
+              <!-- Path 02 -->
+              <div class="border border-stone-800 p-6 transition-colors hover:border-stone-700">
+                <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-500">
+                  Path 02 &nbsp;·&nbsp; Expansion Credit
                 </p>
-                <p class={`mt-1 font-mono text-[10px] font-medium uppercase tracking-[0.16em] ${tier.featured ? 'text-stone-500' : 'text-stone-400'}`}>
-                  {tier.duration}
+                <h3 class="font-display mt-3 text-lg font-semibold text-white">
+                  Create value inside your organization
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-stone-400">
+                  When your Forward Week helps identify a qualified expansion opportunity, we'll credit that value toward your engagement fee.
                 </p>
-              </div>
-
-              <div class={`mb-6 p-4 text-sm leading-6 ${tier.featured ? 'bg-stone-900 text-stone-300' : 'bg-stone-50 text-stone-600'}`}>
-                <p class={`mb-2 font-mono text-[9px] font-bold uppercase tracking-[0.2em] ${tier.featured ? 'text-stone-500' : 'text-stone-400'}`}>
-                  Best for
+                <p class="mt-4 font-mono text-[10px] text-stone-600">
+                  Qualified expansion value offsets your fee dollar for dollar.
                 </p>
-                {tier.fit}
-              </div>
-
-              <p class={`mb-4 font-mono text-[9px] font-bold uppercase tracking-[0.2em] ${tier.featured ? 'text-stone-500' : 'text-stone-400'}`}>
-                Deliverables
-              </p>
-              <ul class="flex-1 space-y-2.5">
-                {tier.deliverables.map((d) => (
-                  <li class="flex items-start gap-3 text-sm leading-6">
-                    <svg
-                      class={`mt-0.5 h-3.5 w-3.5 flex-shrink-0 ${tier.featured ? 'text-emerald-400' : 'text-emerald-700'}`}
-                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"
-                    >
-                      <path d="M5 12h14M13 6l6 6-6 6"/>
-                    </svg>
-                    <span class={tier.featured ? 'text-stone-300' : 'text-stone-600'}>{d}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div class="mt-8">
-                <p class={`mb-4 font-mono text-[10px] font-medium uppercase tracking-[0.14em] ${tier.featured ? 'text-stone-500' : 'text-stone-400'}`}>
-                  {tier.experts}
-                </p>
-                <a
-                  href="mailto:forward@teamsupport.com"
-                  class={`inline-flex w-full items-center justify-center gap-2 border px-5 py-3 text-sm font-semibold transition-colors ${
-                    tier.featured
-                      ? 'border-emerald-600 bg-emerald-600 text-white hover:bg-emerald-500 hover:border-emerald-500'
-                      : 'border-stone-900 bg-stone-950 text-white hover:bg-stone-800'
-                  }`}
-                >
-                  {tier.cta}
-                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <path d="M5 12h14M13 6l6 6-6 6"/>
-                  </svg>
-                </a>
               </div>
 
             </div>
-          ))}
+
+            <!-- Fee range indicator -->
+            <div class="mt-8 border-t border-stone-800 pt-8">
+              <div class="flex items-center justify-between">
+                <div class="text-center">
+                  <p class="font-display text-2xl font-bold text-emerald-500">$0</p>
+                  <p class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-stone-600">earned free</p>
+                </div>
+                <div class="mx-6 flex-1">
+                  <div class="relative h-px bg-stone-800">
+                    <div class="absolute inset-0 bg-gradient-to-r from-emerald-700 to-stone-700"></div>
+                    <div class="absolute -top-1 left-0 h-2.5 w-px bg-emerald-600"></div>
+                    <div class="absolute -top-1 right-0 h-2.5 w-px bg-stone-600"></div>
+                  </div>
+                  <p class="mt-2 text-center font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-stone-700">your fee range</p>
+                </div>
+                <div class="text-center">
+                  <p class="font-display text-2xl font-bold text-stone-400">$2,500</p>
+                  <p class="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-stone-600">full fee</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>
@@ -370,7 +402,7 @@ import { teamRoles, weekDays, tiers, outcomes, proofPoints } from "../data/conte
             </h2>
           </div>
           <p class="max-w-sm text-sm leading-7 text-stone-500 lg:text-right">
-            Every Forward engagement ends with deliverables you can act on — not a report that sits in a folder.
+            Every Forward engagement ends with deliverables you can act on, not a report that sits in a folder.
           </p>
         </div>
 

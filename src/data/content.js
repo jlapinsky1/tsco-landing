@@ -4,14 +4,14 @@ export const teamRoles = [
     title: "Database Strategist",
     discipline: "Data Architecture & Knowledge Structure",
     description:
-      "Maps your data landscape, identifies structural gaps, and builds the foundation AI and automated workflows need to operate reliably — not just occasionally.",
+      "Maps your data landscape, identifies structural gaps, and builds the foundation AI and automated workflows need to operate reliably, not just occasionally.",
   },
   {
     index: "02",
     title: "AI Prompting Specialist",
     discipline: "LLM Design & Behavior Engineering",
     description:
-      "Designs, tests, and refines the prompts and configurations that turn your use cases into consistently reliable AI behaviors. No generic templates — purpose-built for your workflows.",
+      "Designs, tests, and refines the prompts and configurations that turn your use cases into consistently reliable AI behaviors. No generic templates, purpose-built for your workflows.",
   },
   {
     index: "03",
@@ -36,7 +36,7 @@ export const weekDays = [
     focus: "ALIGN",
     title: "Align on goals and friction points.",
     description:
-      "We arrive prepared. Day one is about replacing surface-level assumptions with real alignment — identifying the actual friction points, not the assumed ones, and agreeing on what success looks like by Friday.",
+      "We arrive prepared. Day one is about replacing surface-level assumptions with real alignment, identifying the actual friction points, not the assumed ones, and agreeing on what success looks like by Friday.",
     bars: [82, 48, 91, 35],
   },
   {
@@ -84,7 +84,7 @@ export const tiers = [
     price: "From $15,000",
     duration: "One week · single focus area",
     experts: "2 specialists deployed",
-    fit: "Teams with a specific, well-scoped challenge — one workflow, one AI use case, one knowledge gap.",
+    fit: "Teams with a specific, well-scoped challenge: one workflow, one AI use case, one knowledge gap.",
     deliverables: [
       "Scoped use case validated and configured",
       "Prompt library for target workflow",
@@ -141,13 +141,13 @@ export const outcomes = [
     index: "02",
     title: "Database and knowledge readiness",
     description:
-      "A clear picture of how your data structures support — or block — AI performance, with specific, actionable recommendations.",
+      "A clear picture of how your data structures support or block AI performance, with specific, actionable recommendations.",
   },
   {
     index: "03",
     title: "Prompts that actually work",
     description:
-      "A tested, organized prompt library built for your specific workflows. Not generic examples — purpose-built and validated in your environment.",
+      "A tested, organized prompt library built for your specific workflows. Not generic examples, purpose-built and validated in your environment.",
   },
   {
     index: "04",
@@ -165,14 +165,14 @@ export const outcomes = [
     index: "06",
     title: "Workflow confidence and adoption momentum",
     description:
-      "Your team ends the week having built something real — and knowing how to operate it. That's how adoption begins.",
+      "Your team ends the week having built something real and knowing how to operate it. That's how adoption begins.",
   },
 ];
 
 export const proofPoints = [
   {
     label: "Built for complexity",
-    copy: "Designed for teams with complex customer service operations — not teams looking for a quick demo or a generic AI overview.",
+    copy: "Designed for teams with complex customer service operations, not teams looking for a quick demo or a generic AI overview.",
   },
   {
     label: "Real systems only",
